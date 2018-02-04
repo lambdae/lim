@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VHOME=/opt/local
+VHOME=/home/ydlme/local
 HNCURSES=$VHOME/ncurses
 HVIM=$VHOME/vim
 HCONF=$VHOME/dconf
@@ -16,7 +16,10 @@ cd ..
 tar xvjf vim-7.4.tar.bz2
 cd vim74
 export LDFLAGS="-L$HNCURSES/lib"
-./configure --enable-gui=no --without-x -with-features=huge --prefix=$HVIM --with-tlib=ncurses
+make distclean
+./configure --enable-gui=no --without-x -with-features=huge \
+    --prefix=$HVIM --with-tlib=ncurses \
+    --enable-pythoninterp 
 make
 make install
 cp $HVIM/bin/vim $HVIM/bin/dvim
