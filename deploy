@@ -22,6 +22,7 @@ make install
 cp $HVIM/bin/vim $HVIM/bin/dvim
 cd ..
 
+rm -rf $HCONF
 cp -rf dconf $VHOME
 cd $HCONF
 sh install_vundle.sh
