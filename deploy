@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VHOME=/home/ydlme/local
+VHOME=/opt/local
 HNCURSES=$VHOME/ncurses
 HVIM=$VHOME/vim
 HCONF=$VHOME/dconf
@@ -13,8 +13,8 @@ make
 make install
 cd ..
 
-tar xvjf vim-7.4.tar.bz2
-cd vim74
+tar xvjf vim-8.0.tar.bz2
+cd vim80
 export LDFLAGS="-L$HNCURSES/lib"
 make distclean
 ./configure --enable-gui=no --without-x -with-features=huge \
@@ -38,7 +38,7 @@ mv vimrc.new vimrc
 
 
 echo "export VIM_DIR=$HVIM" >> ~/.limrc
-echo "export VIMRUNTIME=\$VIM_DIR/share/vim/vim74" >> ~/.limrc
+echo "export VIMRUNTIME=\$VIM_DIR/share/vim/vim80" >> ~/.limrc
 echo "export EDITOR=dvim" >> ~/.limrc
 echo "export PATH=\$VIM_DIR/bin:\$PATH" >> ~/.limrc
 echo "alias lim='dvim -u $HCONF/vimrc'" >> ~/.limrc
