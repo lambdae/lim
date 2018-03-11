@@ -35,6 +35,10 @@ function build_vim() {
     cd ..
 }
 
+
+build_ncurse
+build_vim
+
 rm -rf $HCONF
 cp -rf dconf $VHOME
 cd $HCONF
